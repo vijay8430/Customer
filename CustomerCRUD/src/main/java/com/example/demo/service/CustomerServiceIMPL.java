@@ -21,18 +21,9 @@ public class CustomerServiceIMPL implements CustomerService {
 	@Override
 	public void add(Customer customer) {
 		// TODO Auto-generated method stub
-		Integer id = customer.getId();
+	
 
-		if (id > 0) {
-			if (cr.existsById(id)) {
-				throw new InvalidId("Duplicate id");
-
-			}
-
-		} else {
-			throw new InvalidId("INVALID id NUMBER");
-
-		}
+		
 
 		String name = customer.getName().trim();
 		List<Customer> list = findByname(name);
